@@ -1,0 +1,68 @@
+# Proyecto de mostrar ususarios
+
+Este proyecto consiste en una aplicación de **Backend en Node.js(v. 20.15.0) con Express(v. 4.21.2)** y **Frontend en Angular (v. 18.2.12)
+** que permite mostrar una lista de usuarios. El backend se conecta a una base de datos PostgreSQL para obtener los datos de los usuarios. 
+El frontend consume este microservicio para mostrar la información de los usuarios en un formulario sencillo
+
+## Parte 1: Backend (Node.js + Express + PostgreSQL)
+
+### 1.1. Requisitos previos
+
+- **Node.js** instalado. Puedes descargarlo desde [aquí](https://nodejs.org/).
+- **PostgreSQL** instalado. Puedes descargarlo desde [aquí](https://www.postgresql.org/download/).
+
+### 1.2. Pasos para ejecutar el backend localmente
+
+1. Clona este repositorio en tu máquina local:
+    git clone https://github.com/jeissonLL/PruebaLerPrevencion.git
+	
+- Rutas para ejecutar los directorios 
+    Para el backend cd BE_Nodejs_LerPrevencion
+	Para el frontend cd FE_Angular_LerPrevencion
+    
+
+2. Recuerda tener las dependencias instaladas de angular. 
+
+3. El archivo .env debe tener esta configuracion para tener acceso a la base de datos
+
+    DB_USER=postgres
+	DB_HOST=localhost
+	DB_NAME=lerPrevencion
+	DB_PASSWORD=tu-contaseña en mi caso es (sa)
+	DB_PORT=5432
+	PORT=3000
+
+5. El servidor debería estar corriendo en `http://localhost:3000`.
+
+### 1.3. Comandos para crear la tabla de usuarios en PostgreSQL
+
+6. Abre la terminal de PostgreSQL (psql) o usa una herramienta como **pgAdmin** o lo puedes hacer directamente
+desde la base el gestor.
+   
+7. Conéctate a tu base de datos:
+
+    psql -U usuario -d lerPrevencion
+
+8. Crea la tabla `usuarios` con el siguiente comando SQL:
+
+    ```sql
+    CREATE TABLE usuarios (
+        id SERIAL PRIMARY KEY,
+        nombre VARCHAR(100),
+        correo VARCHAR(100),
+        edad INT
+    );
+    ```
+
+9. Inserta algunos datos de prueba:
+
+    ```sql
+    INSERT INTO usuarios (nombre, correo, edad) VALUES
+    ('Juan', 'juan@example.com', 25),
+    ('Maria', 'maria@example.com', 30),
+    ('Carlos', 'carlos@example.com', 28);
+    ```
+
+
+
+

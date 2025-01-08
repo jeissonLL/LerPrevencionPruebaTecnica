@@ -1,0 +1,12 @@
+<h2>Lista de Usuarios</h2>
+<form>
+  <div *ngFor="let usuario of usuarios">
+    <label>Nombre:</label>
+    <input type="text" [value]="usuario.nombre" readonly>
+    <label>Correo:</label>
+    <input type="text" [value]="usuario.correo" readonly>
+    <label>Edad:</label>
+    <input type="number" [value]="usuario.edad" readonly>
+    <hr>
+  </div>
+</form>
