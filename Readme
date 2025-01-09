@@ -63,6 +63,8 @@ desde la base el gestor.
     ('Carlos', 'carlos@example.com', 28);
     ```
 
+10. Pruebas en postman para poder ejecutar la api puedes usar esta Url: http://localhost:3000/api/data
+
 
 
 
